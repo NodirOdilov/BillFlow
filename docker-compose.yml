@@ -7,13 +7,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-invoiceforge}
-      POSTGRES_USER: ${POSTGRES_USER:-invoiceforge}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-invoiceforge_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-billflow}
+      POSTGRES_USER: ${POSTGRES_USER:-billflow}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-billflow_secret}
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-invoiceforge}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-billflow}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -48,7 +48,7 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE:-config.settings.development}
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-invoiceforge}:${POSTGRES_PASSWORD:-invoiceforge_secret}@db:5432/${POSTGRES_DB:-invoiceforge}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-billflow}:${POSTGRES_PASSWORD:-billflow_secret}@db:5432/${POSTGRES_DB:-billflow}
       - REDIS_URL=redis://redis:6379/0
     depends_on:
       db:
@@ -71,7 +71,7 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE:-config.settings.development}
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-invoiceforge}:${POSTGRES_PASSWORD:-invoiceforge_secret}@db:5432/${POSTGRES_DB:-invoiceforge}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-billflow}:${POSTGRES_PASSWORD:-billflow_secret}@db:5432/${POSTGRES_DB:-billflow}
       - REDIS_URL=redis://redis:6379/0
     depends_on:
       db:
@@ -93,7 +93,7 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE:-config.settings.development}
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-invoiceforge}:${POSTGRES_PASSWORD:-invoiceforge_secret}@db:5432/${POSTGRES_DB:-invoiceforge}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-billflow}:${POSTGRES_PASSWORD:-billflow_secret}@db:5432/${POSTGRES_DB:-billflow}
       - REDIS_URL=redis://redis:6379/0
     depends_on:
       db:

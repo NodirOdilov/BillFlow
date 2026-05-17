@@ -1,5 +1,5 @@
 """
-Celery configuration for InvoiceForge project.
+Celery configuration for BillFlow project.
 """
 
 import os
@@ -9,7 +9,7 @@ from celery.schedules import crontab
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.development")
 
-app = Celery("invoiceforge")
+app = Celery("billflow")
 
 app.config_from_object("django.conf:settings", namespace="CELERY")
 

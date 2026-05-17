@@ -1,5 +1,5 @@
 """
-Custom permission classes for InvoiceForge.
+Custom permission classes for BillFlow.
 Implements role-based access control for the API.
 """
 

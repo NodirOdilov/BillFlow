@@ -41,10 +41,10 @@ class AccountProvisioningService:
     @staticmethod
     def _send_welcome_email(user):
         """Send a welcome email to a newly registered user."""
-        subject = f"Welcome to {getattr(settings, 'COMPANY_NAME', 'InvoiceForge')}"
+        subject = f"Welcome to {getattr(settings, 'COMPANY_NAME', 'BillFlow')}"
         body = (
             f"Hi {user.first_name},\n\n"
-            f"Welcome to InvoiceForge! Your account has been created "
+            f"Welcome to BillFlow! Your account has been created "
             f"successfully.\n\n"
             f"Here are a few things you can do to get started:\n"
             f"  1. Complete your business profile\n"
@@ -52,7 +52,7 @@ class AccountProvisioningService:
             f"  3. Create and send your first invoice\n\n"
             f"If you have any questions, feel free to reach out to our "
             f"support team.\n\n"
-            f"Best regards,\nThe InvoiceForge Team"
+            f"Best regards,\nThe BillFlow Team"
         )
         email = EmailMessage(
             subject=subject,
@@ -206,11 +206,11 @@ class AccountDataExportService:
 
         timestamp = timezone.now().strftime("%Y%m%d_%H%M%S")
         email = EmailMessage(
-            subject="Your InvoiceForge Data Export",
+            subject="Your BillFlow Data Export",
             body=(
                 f"Hi {user.first_name},\n\n"
                 "Attached you will find your requested data export.\n\n"
-                "Best regards,\nThe InvoiceForge Team"
+                "Best regards,\nThe BillFlow Team"
             ),
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=[user.email],

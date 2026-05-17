@@ -1,5 +1,5 @@
 """
-Development settings for InvoiceForge.
+Development settings for BillFlow.
 """
 
 from .base import *  # noqa: F401, F403

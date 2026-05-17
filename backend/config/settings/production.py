@@ -1,5 +1,5 @@
 """
-Production settings for InvoiceForge.
+Production settings for BillFlow.
 """
 
 from .base import *  # noqa: F401, F403
@@ -65,7 +65,7 @@ LOGGING = {
         },
         "file": {
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": BASE_DIR / "logs" / "invoiceforge.log",  # noqa: F405
+            "filename": BASE_DIR / "logs" / "billflow.log",  # noqa: F405
             "maxBytes": 1024 * 1024 * 10,  # 10 MB
             "backupCount": 5,
             "formatter": "verbose",

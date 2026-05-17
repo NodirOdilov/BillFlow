@@ -1,5 +1,5 @@
 """
-Audit log middleware for InvoiceForge.
+Audit log middleware for BillFlow.
 Records write operations (POST, PUT, PATCH, DELETE) on API endpoints
 for compliance and troubleshooting purposes.
 """
@@ -10,7 +10,7 @@ import logging
 from django.utils import timezone
 from django.utils.deprecation import MiddlewareMixin
 
-logger = logging.getLogger("invoiceforge.audit")
+logger = logging.getLogger("billflow.audit")
 
 # HTTP methods that modify data
 WRITE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}

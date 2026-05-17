@@ -1,5 +1,5 @@
 """
-Custom exception classes and exception handler for InvoiceForge.
+Custom exception classes and exception handler for BillFlow.
 """
 
 from rest_framework import status
@@ -7,15 +7,15 @@ from rest_framework.exceptions import APIException
 from rest_framework.views import exception_handler
 
 
-class InvoiceForgeException(APIException):
-    """Base exception for InvoiceForge."""
+class BillFlowException(APIException):
+    """Base exception for BillFlow."""
 
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = "An error occurred."
     default_code = "error"
 
 
-class InvoiceAlreadyPaid(InvoiceForgeException):
+class InvoiceAlreadyPaid(BillFlowException):
     """Raised when attempting to modify a fully paid invoice."""
 
     status_code = status.HTTP_400_BAD_REQUEST
@@ -23,7 +23,7 @@ class InvoiceAlreadyPaid(InvoiceForgeException):
     default_code = "invoice_already_paid"
 
 
-class InvoiceAlreadySent(InvoiceForgeException):
+class InvoiceAlreadySent(BillFlowException):
     """Raised when attempting invalid operations on a sent invoice."""
 
     status_code = status.HTTP_400_BAD_REQUEST
@@ -31,7 +31,7 @@ class InvoiceAlreadySent(InvoiceForgeException):
     default_code = "invoice_already_sent"
 
 
-class InvalidInvoiceStatus(InvoiceForgeException):
+class InvalidInvoiceStatus(BillFlowException):
     """Raised when an invoice status transition is invalid."""
 
     status_code = status.HTTP_400_BAD_REQUEST
@@ -39,7 +39,7 @@ class InvalidInvoiceStatus(InvoiceForgeException):
     default_code = "invalid_status_transition"
 
 
-class PaymentExceedsBalance(InvoiceForgeException):
+class PaymentExceedsBalance(BillFlowException):
     """Raised when a payment exceeds the remaining invoice balance."""
 
     status_code = status.HTTP_400_BAD_REQUEST
@@ -47,7 +47,7 @@ class PaymentExceedsBalance(InvoiceForgeException):
     default_code = "payment_exceeds_balance"
 
 
-class EstimateAlreadyConverted(InvoiceForgeException):
+class EstimateAlreadyConverted(BillFlowException):
     """Raised when attempting to convert an already-converted estimate."""
 
     status_code = status.HTTP_400_BAD_REQUEST
@@ -55,7 +55,7 @@ class EstimateAlreadyConverted(InvoiceForgeException):
     default_code = "estimate_already_converted"
 
 
-class PDFGenerationError(InvoiceForgeException):
+class PDFGenerationError(BillFlowException):
     """Raised when PDF generation fails."""
 
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR

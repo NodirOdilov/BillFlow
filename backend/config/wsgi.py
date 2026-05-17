@@ -1,5 +1,5 @@
 """
-WSGI config for InvoiceForge project.
+WSGI config for BillFlow project.
 """
 
 import os

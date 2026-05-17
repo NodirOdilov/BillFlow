@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(head -50)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\Github\\\\NodirOdilov\\\\InvoiceForge\\\\frontend\\\\{src\" -Recurse | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\('d:\\\\Github\\\\NodirOdilov\\\\InvoiceForge\\\\', ''\\) })"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 """
-Base settings for InvoiceForge project.
+Base settings for BillFlow project.
 Shared across all environments.
 """
 
@@ -95,7 +95,7 @@ DATABASES = {
     "default": dj_database_url.config(
         default=config(
             "DATABASE_URL",
-            default="postgresql://invoiceforge:invoiceforge_secret@localhost:5432/invoiceforge",
+            default="postgresql://billflow:billflow_secret@localhost:5432/billflow",
         ),
         conn_max_age=600,
     )
@@ -222,14 +222,14 @@ EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
 EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
-DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="InvoiceForge <noreply@invoiceforge.com>")
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="BillFlow <noreply@billflow.com>")
 
 # ==============================================================================
 # drf-spectacular (OpenAPI / Swagger)
 # ==============================================================================
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "InvoiceForge API",
+    "TITLE": "BillFlow API",
     "DESCRIPTION": "Invoice and Billing Management System API",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
@@ -241,7 +241,7 @@ SPECTACULAR_SETTINGS = {
 # ==============================================================================
 
 DEFAULT_CURRENCY = config("DEFAULT_CURRENCY", default="USD")
-COMPANY_NAME = config("COMPANY_NAME", default="InvoiceForge")
+COMPANY_NAME = config("COMPANY_NAME", default="BillFlow")
 INVOICE_PREFIX = config("INVOICE_PREFIX", default="INV")
 ESTIMATE_PREFIX = config("ESTIMATE_PREFIX", default="EST")
 PAYMENT_REMINDER_DAYS = [7, 3, 1, 0, -1, -7, -14, -30]

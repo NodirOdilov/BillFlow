@@ -1,5 +1,5 @@
 """
-Custom pagination classes for InvoiceForge.
+Custom pagination classes for BillFlow.
 """
 
 from rest_framework.pagination import PageNumberPagination

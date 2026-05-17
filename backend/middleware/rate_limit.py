@@ -1,5 +1,5 @@
 """
-API rate limiting middleware for InvoiceForge.
+API rate limiting middleware for BillFlow.
 Provides per-IP and per-user rate limiting using Django's cache framework.
 """
 

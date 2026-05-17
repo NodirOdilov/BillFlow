@@ -1,5 +1,5 @@
 """
-Custom validators for InvoiceForge models and serializers.
+Custom validators for BillFlow models and serializers.
 """
 
 import re

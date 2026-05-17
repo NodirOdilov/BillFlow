@@ -1,5 +1,5 @@
 """
-URL configuration for InvoiceForge project.
+URL configuration for BillFlow project.
 """
 
 from django.conf import settings

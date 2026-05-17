@@ -1,5 +1,5 @@
 """
-Request logging middleware for InvoiceForge.
+Request logging middleware for BillFlow.
 Logs every incoming API request with timing, user, and response status.
 """
 
@@ -9,7 +9,7 @@ import uuid
 
 from django.utils.deprecation import MiddlewareMixin
 
-logger = logging.getLogger("invoiceforge.requests")
+logger = logging.getLogger("billflow.requests")
 
 
 class RequestLoggingMiddleware(MiddlewareMixin):
